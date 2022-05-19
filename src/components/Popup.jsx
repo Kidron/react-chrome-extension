@@ -13,7 +13,21 @@ export default function Popup() {
         .then(data => setUrls(data))
 }, [])
 
-const videosEl = urls.map(video => {
+// const videosEl = urls.map(video => {
+//   return(
+//     <Url 
+//       key={video.videoId} 
+//       videoId={video.videoId}
+//       videoTitle={video.title}
+//       />
+//   )
+// })
+
+
+  return(
+    <>
+      <ol id="urlsList">
+        {urls.map(video => {
   return(
     <Url 
       key={video.videoId} 
@@ -21,13 +35,7 @@ const videosEl = urls.map(video => {
       videoTitle={video.title}
       />
   )
-})
-
-
-  return(
-    <>
-      <ol id="urlsList">
-        {videosEl}
+})}
       </ol>
     </>
   )
