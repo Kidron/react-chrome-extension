@@ -4,8 +4,8 @@ export default function Url(props) {
   return (
     <>
     <li className="video-link">
-    <button class="btn" data-url={videoUrl}>Copy URL</button>
-    <a class="btn" href={videoUrl} rel="noopener noreferrer" target="_blank">Watch</a>
+    <button className="btn" data-url={videoUrl} onClick={props.videoCopy}>Copy URL</button>
+    <a className="btn" href={videoUrl} rel="noopener noreferrer" target="_blank">Watch</a>
     {props.videoTitle}
     </li>
     </>
