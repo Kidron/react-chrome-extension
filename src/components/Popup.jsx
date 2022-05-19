@@ -5,10 +5,15 @@ export default function Popup() {
 
   const [urls, setUrls] = useState([]);
 
-  function handleCopy(event) {
+  async function handleCopy(event) {
     const { dataset } = event.target;
-    navigator.clipboard.writeText(dataset.url);
-    alert(`${dataset.url} copied to clipboard`);
+    navigator.clipboard.writeText(dataset.url)
+      .then(function () {
+        alert(`${dataset.url} copied to clipboard`);
+      }, function (err) {
+        console.error('Could not copy text', err);
+      })
+   
   }
 
   useEffect(() => {
